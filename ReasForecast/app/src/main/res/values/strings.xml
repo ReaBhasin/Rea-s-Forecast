@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Rea\'s Forecast</string>
+    <string name="title_activity_weather">Weather Activity</string>
+    <string name="weather_api" formatted="false">http://api.wunderground.com/api/%s/%s/q/%s.json</string>
+    <string name="api_key">5bc2d3c5be382a28</string>
+    <string name="settings">Settings</string>
+    <string name="ok">OK</string>
+    <string name="data_error">There is currently no weather data for this location. Please try again.</string>
+    <string name="fahrenheit">\u0020F</string>
+    <string name="feels_like_label">Feels Like:\u0020</string>
+    <string name="wind_label">Wind:\u0020</string>
+    <string name="humidity_label">Humidity:\u0020</string>
+    <string name="title_section1">Current</string>
+    <string name="title_section2">Three Day</string>
+    <string name="title_section3">Hourly</string>
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Close</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="action_settings">Settings</string>
+</resources>
