@@ -68,8 +68,8 @@ public class ThreeDayWeatherFragment extends Fragment implements AsyncResponse {
                 JSONObject forecastDay = forecastArray.getJSONObject(i);
 
                 //Create child table row
-               // TableRow child = new TableRow(getActivity());
-                //child.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1.0f));
+                TableRow child = new TableRow(getActivity());
+                child.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1.0f));
 
                 //Add Day Text View
                 TextView day = new TextView(getActivity());
@@ -77,33 +77,33 @@ public class ThreeDayWeatherFragment extends Fragment implements AsyncResponse {
                 //Get day information
                 JSONObject date = forecastDay.getJSONObject("date");
                 day.setText(date.getString("weekday"));
-                parent.addView(day);
+                child.addView(day);
 
-//                //Add Weather Icon Web View
-//                icon = new ImageView(getActivity());
-//                icon.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1.0f));
-//                //Get weather icon
-//                String url = forecastDay.getString("icon_url");
-//                new ImageService(getActivity(), this, icon).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
-//                child.addView(icon);
+                //Add Weather Icon Web View
+                icon = new ImageView(getActivity());
+                icon.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1.0f));
+                //Get weather icon
+                String url = forecastDay.getString("icon_url");
+                new ImageService(getActivity(), this, icon).executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, url);
+                child.addView(icon);
 
-//                //Add High Temp Text View
-//                TextView high = new TextView(getActivity());
-//                high.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1.0f));
-//                //Get high temp information
-//                JSONObject highTemp = forecastDay.getJSONObject("high");
-//                high.setText(highTemp.getString("fahrenheit"));
-//                child.addView(high);
+                //Add High Temp Text View
+                TextView high = new TextView(getActivity());
+                high.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1.0f));
+                //Get high temp information
+                JSONObject highTemp = forecastDay.getJSONObject("high");
+                high.setText(highTemp.getString("fahrenheit"));
+                child.addView(high);
 
-//                //Add Low Temp Text View
-//                TextView low = new TextView(getActivity());
-//                low.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1.0f));
-//                //Get low temp information
-//                JSONObject lowTemp = forecastDay.getJSONObject("low");
-//                high.setText(highTemp.getString("fahrenheit"));
-//                child.addView(low);
+                //Add Low Temp Text View
+                TextView low = new TextView(getActivity());
+                low.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT, 1.0f));
+                //Get low temp information
+                JSONObject lowTemp = forecastDay.getJSONObject("low");
+                high.setText(highTemp.getString("fahrenheit"));
+                child.addView(low);
 
-                //parent.addView(child);
+                parent.addView(child);
             }
 
 
